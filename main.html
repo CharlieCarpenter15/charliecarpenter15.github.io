@@ -1,46 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Welcome to My Site</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charlie Carpenter | Portfolio</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f8fa;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      color: #333;
+    :root {
+      --main: #0f172a;
+      --accent: #38bdf8;
+      --bg: #f8fafc;
+      --text: #1e293b;
+      --muted: #64748b;
     }
-    h1 {
-      font-size: 3rem;
-      margin: 0.5em 0;
-    }
-    p {
-      font-size: 1.2rem;
-      margin-bottom: 1.5em;
-    }
-    a.button {
-      text-decoration: none;
-      background: #0070f3;
-      color: white;
-      padding: 0.75em 1.5em;
-      border-radius: 8px;
-      font-weight: bold;
-      transition: background 0.3s ease;
-    }
-    a.button:hover {
-      background: #005bb5;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+    body { background: var(--bg); color: var(--text); padding: 2rem; line-height: 1.6; }
+    header { text-align: center; margin-bottom: 3rem; }
+    header h1 { font-size: 2.5rem; color: var(--main); }
+    header p { font-size: 1.2rem; color: var(--muted); }
+    nav { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1rem; }
+    nav a { text-decoration: none; color: var(--accent); font-weight: bold; }
+    .section { margin-bottom: 3rem; }
+    .card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 1rem; transition: transform 0.2s ease; }
+    .card:hover { transform: translateY(-4px); }
+    h2 { margin-bottom: 1rem; color: var(--main); }
+    .footer { text-align: center; font-size: 0.9rem; color: var(--muted); margin-top: 4rem; }
+    .highlight { color: var(--accent); }
   </style>
 </head>
 <body>
-  <h1>Hello 👋</h1>
-  <p>Welcome to my GitHub Pages website!</p>
-  <a class="button" href="https://github.com/your-username" target="_blank">Visit My GitHub</a>
+  <header>
+    <h1>Charlie Carpenter</h1>
+    <p>Signal Processing & Machine Learning MSc · Full-Stack Developer · AI Engineer</p>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="section" id="projects">
+    <h2>Projects 🚀</h2>
+    <div class="card"><h3>Semantic Stock Prediction Platform</h3><p>BERT-based NLP + RL for stock trends and portfolio optimization. Compared traditional ML models vs semantic-enhanced pipelines.</p></div>
+    <div class="card"><h3>AR Handwriting Spellchecker</h3><p>Real-time AR tool for dyslexia support using OCR and multilingual spellcheck APIs. Won 1st place at Durham Hackathon 2023.</p></div>
+    <div class="card"><h3>Blockchain Ticketing dApp</h3><p>Event ticketing with NFT verification, dynamic pricing and zero fraud. Built with Solidity, Polygon, Hardhat, and JS.</p></div>
+    <div class="card"><h3>Reinforcement Learning for Bipedal Walker</h3><p>Engineered TD3-FORK hybrid for OpenAI Gym walker with 45% faster convergence. Integrated predictive movement and OU noise.</p></div>
+    <div class="card"><h3>Film Recommendation System</h3><p>Hybrid deep-learning recommender with CNN-based filtering, hitting RMSE 0.68 across 100K+ records.</p></div>
+    <div class="card"><h3>Conditional GANs (CGAN) Image Generator</h3><p>Trained DCGANs on CIFAR-100 with 99M parameters and class-label conditioning. Achieved FID of 85.94.</p></div>
+    <div class="card"><h3>VR Physics Engine</h3><p>Custom physics engine and LoD-aware renderer for efficient IMU-based VR simulation with gravity, resistance and collision logic.</p></div>
+  </section>
+
+  <section class="section" id="experience">
+    <h2>Experience 💼</h2>
+    <div class="card"><h3>Cyber Security Analyst · St. James’s Place (2024)</h3><p>Improved third-party risk tracking with BitSight and led compliance for 4,500+ partners. Worked cross-country with UK and India teams.</p></div>
+    <div class="card"><h3>Software Intern · 1 Play Sports (2023)</h3><p>Debugged core infra for global event delivery with Mastercard. Wrote proposals and resolved 15+ critical deployment issues.</p></div>
+    <div class="card"><h3>Events Lead · Durham St Mary’s (2022–2023)</h3><p>Organized 25+ student events (£150k+ revenue). Launched digital payment workflows and boosted satisfaction +85%.</p></div>
+    <div class="card"><h3>Sailing Instructor · Grafham Water SC (2017–2021)</h3><p>Trained kids in RYA Level 1–2 with 100% pass rates. Olympic Park trainee. Focused on adaptive teaching styles.</p></div>
+    <div class="card"><h3>Cadet Warrant Officer · RAF CCF (2016–2021)</h3><p>Led weekly programs for 150+ cadets. Passed RAF Cranwell training with Merit. Team leadership and logistics.</p></div>
+  </section>
+
+  <section class="section" id="education">
+    <h2>Education 🎓</h2>
+    <div class="card">
+      <h3>NTU Singapore · MSc Signal Processing & ML (2025)</h3>
+      <p>Focus: AI, Genetic Algorithms, Machine Vision</p>
+    </div>
+    <div class="card">
+      <h3>Durham University · BSc Computer Science (2021–2024)</h3>
+      <p>1st Class Honours · Dissertation: Blockchain Ticketing System (87%)</p>
+      <p>Top coursework: Project Management (91%), Computer Vision (86%), AI (75%)</p>
+    </div>
+    <div class="card">
+      <h3>Gresham’s School · A-Levels (2019–2021)</h3>
+      <p>Grades: A* Computer Science, A Maths, A Physics</p>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <h2>Skills 🧠</h2>
+    <div class="card">
+      <p><strong>Languages & Tools:</strong> Python, JavaScript, C++, C#, Solidity, SQL, HTML/CSS, Django, Flask, OpenCV, PyTorch, Docker, Git, Swift</p>
+      <p><strong>Domains:</strong> AI/ML, NLP, Computer Vision, Blockchain, Full-stack Dev, AR/VR</p>
+      <p><strong>Soft Skills:</strong> Problem-Solving, Project Management, Technical Writing, Public Speaking</p>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2>Contact 📬</h2>
+    <div class="card">
+      <p>Website: <a href="https://charliecarpenter.com" target="_blank">charliecarpenter.com</a></p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/carpenter-charlie" target="_blank">carpenter-charlie</a></p>
+      <p>Email: <span class="highlight">me@charliecarpenter.com</span></p>
+      <p>Phone: <span class="highlight">+65 8332 9858</span></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    &copy; 2025 Charlie Carpenter · Built with ❤️, AI, and a dash of coffee.
+  </footer>
+
+  <script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
 </body>
 </html>
