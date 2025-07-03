@@ -2,7 +2,7 @@ import React from 'react';
 import { usePortfolio } from '../contexts/PortfolioContext';
 
 const Projects = () => {
-  const { data, currentFilter, filterProjects, getFilteredProjects, getProjectCategories } = usePortfolio();
+  const { currentFilter, filterProjects, getFilteredProjects, getProjectCategories } = usePortfolio();
 
   const getProjectIcon = (tags) => {
     const categories = getProjectCategories(tags);

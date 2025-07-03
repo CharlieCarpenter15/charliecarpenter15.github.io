@@ -12,7 +12,8 @@ export const usePortfolio = () => {
 };
 
 export const PortfolioProvider = ({ children }) => {
-  const [data, setData] = useState(portfolioData);
+  // eslint-disable-next-line no-unused-vars
+  const [data, _setData] = useState(portfolioData);
   const [loading, setLoading] = useState(true);
   const [currentFilter, setCurrentFilter] = useState('all');
 
