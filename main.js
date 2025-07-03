@@ -189,6 +189,9 @@ class PortfolioApp {
     
     // Scroll effects
     this.setupScrollEffects();
+    
+    // Search functionality
+    this.setupSearch();
   }
 
   setupNavigation() {
@@ -306,6 +309,7 @@ class PortfolioApp {
     this.renderTechnicalDevelopments();
     this.renderAchievements();
     this.renderActivities();
+    this.renderLiveStats();
     this.renderContact();
   }
 
@@ -625,6 +629,165 @@ class PortfolioApp {
         </div>
       </div>
     `;
+  }
+
+  renderLiveStats() {
+    // Load GitHub stats
+    this.loadGitHubStats();
+    
+    // Load visitor stats
+    this.loadVisitorStats();
+  }
+
+  async loadGitHubStats() {
+    const statusElement = document.getElementById('githubStatus');
+    const contentElement = document.getElementById('githubStats');
+
+    try {
+      const response = await fetch('/.netlify/functions/github-stats');
+      const data = await response.json();
+
+      // Update status
+      statusElement.innerHTML = `
+        <span class="status-dot"></span>
+        <span>Live</span>
+      `;
+      statusElement.className = 'stats-status live';
+
+      // Update content
+      contentElement.innerHTML = `
+        <div class="github-overview">
+          <div class="github-stat">
+            <div class="github-stat-value">${data.publicRepos}</div>
+            <div class="github-stat-label">Repositories</div>
+          </div>
+          <div class="github-stat">
+            <div class="github-stat-value">${data.totalStars}</div>
+            <div class="github-stat-label">Stars</div>
+          </div>
+          <div class="github-stat">
+            <div class="github-stat-value">${data.totalForks}</div>
+            <div class="github-stat-label">Forks</div>
+          </div>
+          <div class="github-stat">
+            <div class="github-stat-value">${data.followers}</div>
+            <div class="github-stat-label">Followers</div>
+          </div>
+        </div>
+        
+        <div class="github-languages">
+          <h4>Top Languages</h4>
+          <div class="language-list">
+            ${data.topLanguages.map(lang => 
+              `<span class="language-tag">${lang.name}</span>`
+            ).join('')}
+          </div>
+        </div>
+        
+        <div class="recent-repos">
+          <h4>Recent Activity</h4>
+          ${data.recentRepos.slice(0, 3).map(repo => `
+            <div class="repo-item">
+              <div class="repo-info">
+                <h5>${repo.name}</h5>
+                <p>${repo.description || 'No description available'}</p>
+              </div>
+              <div class="repo-stats">
+                <span><i class="fas fa-star"></i> ${repo.stars}</span>
+                ${repo.language ? `<span>${repo.language}</span>` : ''}
+              </div>
+            </div>
+          `).join('')}
+        </div>
+        
+        <div style="text-align: center; margin-top: 1rem;">
+          <a href="${data.profileUrl}" target="_blank" class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">
+            <i class="fab fa-github"></i> View GitHub Profile
+          </a>
+        </div>
+      `;
+
+    } catch (error) {
+      console.error('Error loading GitHub stats:', error);
+      statusElement.innerHTML = `
+        <span style="color: var(--secondary);">⚠️</span>
+        <span>Error</span>
+      `;
+      contentElement.innerHTML = `
+        <div style="text-align: center; color: var(--text-muted);">
+          <p>Unable to load GitHub stats</p>
+          <p style="font-size: 0.8rem;">Please check your connection</p>
+        </div>
+      `;
+    }
+  }
+
+  async loadVisitorStats() {
+    const statusElement = document.getElementById('visitorStatus');
+    const contentElement = document.getElementById('visitorStats');
+
+    try {
+      const response = await fetch('/.netlify/functions/visitor-counter');
+      const data = await response.json();
+
+      // Update status
+      statusElement.innerHTML = `
+        <span class="status-dot"></span>
+        <span>Live</span>
+      `;
+      statusElement.className = 'stats-status live';
+
+      // Update content
+      contentElement.innerHTML = `
+        <div class="visitor-overview">
+          <div class="visitor-stat">
+            <div class="visitor-stat-value">${data.totalVisitors.toLocaleString()}</div>
+            <div class="visitor-stat-label">Total Visitors</div>
+          </div>
+          <div class="visitor-stat">
+            <div class="visitor-stat-value">${data.todaysVisitors}</div>
+            <div class="visitor-stat-label">Today</div>
+          </div>
+          <div class="visitor-stat">
+            <div class="visitor-stat-value">${data.weeklyVisitors}</div>
+            <div class="visitor-stat-label">This Week</div>
+          </div>
+        </div>
+        
+        <div style="background: var(--bg-secondary); padding: 1rem; border-radius: 8px;">
+          <h4 style="color: var(--text-primary); margin-bottom: 0.75rem; font-size: 0.9rem;">
+            <i class="fas fa-chart-line"></i> Engagement Metrics
+          </h4>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; font-size: 0.9rem;">
+            <div>
+              <span style="color: var(--text-muted);">Avg. Session:</span>
+              <span style="color: var(--primary); font-weight: 600;">${data.averageSessionDuration}</span>
+            </div>
+            <div>
+              <span style="color: var(--text-muted);">Bounce Rate:</span>
+              <span style="color: var(--accent); font-weight: 600;">${data.bounceRate}</span>
+            </div>
+          </div>
+        </div>
+        
+        <div style="font-size: 0.8rem; color: var(--text-muted); text-align: center; margin-top: 1rem;">
+          Last updated: ${new Date(data.lastUpdated).toLocaleTimeString()}
+        </div>
+      `;
+
+    } catch (error) {
+      console.error('Error loading visitor stats:', error);
+      statusElement.innerHTML = `
+        <span style="color: var(--secondary);">⚠️</span>
+        <span>Error</span>
+      `;
+      contentElement.innerHTML = `
+        <div style="text-align: center; color: var(--text-muted);">
+          <p>Unable to load visitor analytics</p>
+          <p style="font-size: 0.8rem;">Please check your connection</p>
+        </div>
+      `;
+    }
   }
 
   getProjectCategories(tags) {
