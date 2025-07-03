@@ -1,10 +1,10 @@
 [build]
-  # No build command needed since this is a static site
-  publish = "."
+  command = "npm run build"
+  publish = "build"
 
 [build.environment]
-  # Environment variables for Netlify
   NODE_VERSION = "18"
+  NPM_VERSION = "8"
 
 # Form submission redirect
 # This is handled by the form action, so we don't need this redirect
@@ -21,6 +21,13 @@
     X-XSS-Protection = "1; mode=block"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self' https:; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:;"
+
+# Cache static assets
+[[headers]]
+  for = "/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
 # Cache CSS and JS files for better performance
 [[headers]]
@@ -60,4 +67,10 @@
 [[redirects]]
   from = "/*"
   to = "/404.html"
-  status = 404 
+  status = 404
+
+# SPA redirect rule
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200 
