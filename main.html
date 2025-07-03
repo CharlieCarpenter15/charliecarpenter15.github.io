@@ -4,109 +4,265 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Charlie Carpenter | Portfolio</title>
-  <style>
-    :root {
-      --main: #0f172a;
-      --accent: #38bdf8;
-      --bg: #f8fafc;
-      --text: #1e293b;
-      --muted: #64748b;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
-    body { background: var(--bg); color: var(--text); padding: 2rem; line-height: 1.6; }
-    header { text-align: center; margin-bottom: 3rem; }
-    header h1 { font-size: 2.5rem; color: var(--main); }
-    header p { font-size: 1.2rem; color: var(--muted); }
-    nav { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1rem; }
-    nav a { text-decoration: none; color: var(--accent); font-weight: bold; }
-    .section { margin-bottom: 3rem; }
-    .card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 1rem; transition: transform 0.2s ease; }
-    .card:hover { transform: translateY(-4px); }
-    h2 { margin-bottom: 1rem; color: var(--main); }
-    .footer { text-align: center; font-size: 0.9rem; color: var(--muted); margin-top: 4rem; }
-    .highlight { color: var(--accent); }
-  </style>
+  <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>Charlie Carpenter</h1>
-    <p>Signal Processing & Machine Learning MSc · Full-Stack Developer · AI Engineer</p>
-    <nav>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#education">Education</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact,</a>
-    </nav>
-  </header>
-
-  <section class="section" id="projects">
-    <h2>Projects 🚀</h2>
-    <div class="card"><h3>Semantic Stock Prediction Platform</h3><p>BERT-based NLP + RL for stock trends and portfolio optimization. Compared traditional ML models vs semantic-enhanced pipelines.</p></div>
-    <div class="card"><h3>AR Handwriting Spellchecker</h3><p>Real-time AR tool for dyslexia support using OCR and multilingual spellcheck APIs. Won 1st place at Durham Hackathon 2023.</p></div>
-    <div class="card"><h3>Blockchain Ticketing dApp</h3><p>Event ticketing with NFT verification, dynamic pricing and zero fraud. Built with Solidity, Polygon, Hardhat, and JS.</p></div>
-    <div class="card"><h3>Reinforcement Learning for Bipedal Walker</h3><p>Engineered TD3-FORK hybrid for OpenAI Gym walker with 45% faster convergence. Integrated predictive movement and OU noise.</p></div>
-    <div class="card"><h3>Film Recommendation System</h3><p>Hybrid deep-learning recommender with CNN-based filtering, hitting RMSE 0.68 across 100K+ records.</p></div>
-    <div class="card"><h3>Conditional GANs (CGAN) Image Generator</h3><p>Trained DCGANs on CIFAR-100 with 99M parameters and class-label conditioning. Achieved FID of 85.94.</p></div>
-    <div class="card"><h3>VR Physics Engine</h3><p>Custom physics engine and LoD-aware renderer for efficient IMU-based VR simulation with gravity, resistance and collision logic.</p></div>
-  </section>
-
-  <section class="section" id="experience">
-    <h2>Experience 💼</h2>
-    <div class="card"><h3>Cyber Security Analyst · St. James’s Place (2024)</h3><p>Improved third-party risk tracking with BitSight and led compliance for 4,500+ partners. Worked cross-country with UK and India teams.</p></div>
-    <div class="card"><h3>Software Intern · 1 Play Sports (2023)</h3><p>Debugged core infra for global event delivery with Mastercard. Wrote proposals and resolved 15+ critical deployment issues.</p></div>
-    <div class="card"><h3>Events Lead · Durham St Mary’s (2022–2023)</h3><p>Organized 25+ student events (£150k+ revenue). Launched digital payment workflows and boosted satisfaction +85%.</p></div>
-    <div class="card"><h3>Sailing Instructor · Grafham Water SC (2017–2021)</h3><p>Trained kids in RYA Level 1–2 with 100% pass rates. Olympic Park trainee. Focused on adaptive teaching styles.</p></div>
-    <div class="card"><h3>Cadet Warrant Officer · RAF CCF (2016–2021)</h3><p>Led weekly programs for 150+ cadets. Passed RAF Cranwell training with Merit. Team leadership and logistics.</p></div>
-  </section>
-
-  <section class="section" id="education">
-    <h2>Education 🎓</h2>
-    <div class="card">
-      <h3>NTU Singapore · MSc Signal Processing & ML (2025)</h3>
-      <p>Focus: AI, Genetic Algorithms, Machine Vision</p>
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-content">
+      <div class="loading-spinner"></div>
+      <p>Loading portfolio...</p>
     </div>
-    <div class="card">
-      <h3>Durham University · BSc Computer Science (2021–2024)</h3>
-      <p>1st Class Honours · Dissertation: Blockchain Ticketing System (87%)</p>
-      <p>Top coursework: Project Management (91%), Computer Vision (86%), AI (75%)</p>
-    </div>
-    <div class="card">
-      <h3>Gresham’s School · A-Levels (2019–2021)</h3>
-      <p>Grades: A* Computer Science, A Maths, A Physics</p>
-    </div>
-  </section>
+  </div>
 
-  <section class="section" id="skills">
-    <h2>Skills 🧠</h2>
-    <div class="card">
-      <p><strong>Languages & Tools:</strong> Python, JavaScript, C++, C#, Solidity, SQL, HTML/CSS, Django, Flask, OpenCV, PyTorch, Docker, Git, Swift</p>
-      <p><strong>Domains:</strong> AI/ML, NLP, Computer Vision, Blockchain, Full-stack Dev, AR/VR</p>
-      <p><strong>Soft Skills:</strong> Problem-Solving, Project Management, Technical Writing, Public Speaking</p>
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <span class="logo-text">CC</span>
+      </div>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#experience" class="nav-link">Journey</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="#activities" class="nav-link">Activities</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </div>
-  </section>
+  </nav>
 
-  <section class="section" id="contact">
-    <h2>Contact 📬</h2>
-    <div class="card">
-      <p>Website: <a href="https://charliecarpenter.com" target="_blank">charliecarpenter.com</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/carpenter-charlie" target="_blank">carpenter-charlie</a></p>
-      <p>Email: <span class="highlight">me@charliecarpenter.com</span></p>
-      <p>Phone: <span class="highlight">+65 8332 9858</span></p>
+  <main>
+    <section class="hero" id="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <div class="hero-image">
+              <img src="pics/profile_pic.webp" alt="Charlie Carpenter" class="profile-pic">
+            </div>
+            <h1 class="hero-title">
+              <span class="greeting">Hi, I'm</span>
+              <span class="name" id="heroName">Charlie Carpenter</span>
+            </h1>
+            <p class="hero-subtitle" id="heroSubtitle">Loading...</p>
+            <div class="hero-tags" id="heroTags"></div>
+            <div class="hero-buttons">
+              <a href="#projects" class="btn btn-primary">
+                <i class="fas fa-rocket"></i>
+                View My Work
+              </a>
+              <a href="#contact" class="btn btn-secondary">
+                <i class="fas fa-paper-plane"></i>
+                Get In Touch
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="code-block">
+            <div class="code-header">
+              <div class="code-dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <span class="code-title">portfolio.py</span>
+            </div>
+            <div class="code-content">
+              <pre><code><span class="code-comment"># Building the future, one line at a time</span>
+<span class="code-keyword">class</span> <span class="code-class">Developer</span>:
+    <span class="code-keyword">def</span> <span class="code-function">__init__</span>(<span class="code-param">self</span>):
+        <span class="code-param">self</span>.name = <span class="code-string">"Charlie Carpenter"</span>
+        <span class="code-param">self</span>.passion = <span class="code-string">"AI & Innovation"</span>
+        <span class="code-param">self</span>.status = <span class="code-string">"Always Learning"</span>
+    
+    <span class="code-keyword">def</span> <span class="code-function">create_impact</span>(<span class="code-param">self</span>):
+        <span class="code-keyword">return</span> <span class="code-string">"Transforming ideas into reality"</span></code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <div class="scroll-arrow"></div>
+      </div>
+    </section>
+
+    <section class="experience-education" id="experience">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Professional Journey</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="journey-container">
+          <div class="journey-side">
+            <div class="journey-header">
+              <h3 class="journey-title">
+                <i class="fas fa-briefcase"></i>
+                Experience
+              </h3>
+            </div>
+            <div class="timeline-container" id="experienceTimeline">
+              <!-- Dynamic content will be loaded here -->
+            </div>
+          </div>
+          <div class="journey-divider"></div>
+          <div class="journey-side">
+            <div class="journey-header">
+              <h3 class="journey-title">
+                <i class="fas fa-graduation-cap"></i>
+                Education
+              </h3>
+            </div>
+            <div class="timeline-container" id="educationTimeline">
+              <!-- Dynamic content will be loaded here -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Featured Projects</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="projects-filter">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="ai">AI/ML</button>
+          <button class="filter-btn" data-filter="blockchain">Blockchain</button>
+          <button class="filter-btn" data-filter="ar">AR/VR</button>
+          <button class="filter-btn" data-filter="web">Web Dev</button>
+        </div>
+        <div class="projects-grid" id="projectsGrid">
+          <!-- Dynamic content will be loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <section class="technical-developments" id="technical-developments">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Technical Developments</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="developments-grid" id="developmentsGrid">
+          <!-- Dynamic content will be loaded here -->
+        </div>
+      </div>
+    </section>
+
+
+
+    <section class="achievements" id="achievements">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Achievements</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="achievements-grid" id="achievementsGrid">
+          <!-- Dynamic content will be loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <section class="activities" id="activities">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Activities & Interests</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="activities-grid" id="activitiesGrid">
+          <!-- Dynamic content will be loaded here -->
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Get In Touch</h2>
+          <div class="section-line"></div>
+        </div>
+        <div class="contact-content">
+          <div class="contact-info" id="contactInfo">
+            <!-- Dynamic content will be loaded here -->
+          </div>
+          <div class="contact-form">
+            <form id="contactForm" name="contact" method="POST" data-netlify="true" action="/thank-you.html" netlify-honeypot="bot-field">
+              <!-- Honeypot field for spam protection -->
+              <input type="hidden" name="bot-field" />
+              <!-- Form name for Netlify -->
+              <input type="hidden" name="form-name" value="contact" />
+              
+              <div class="form-group">
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+              </div>
+              <div class="form-group">
+                <input type="text" id="subject" name="subject" placeholder="Subject (Optional)">
+              </div>
+              <div class="form-group">
+                <textarea id="message" name="message" placeholder="Your Message" rows="5" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" id="submitBtn">
+                <i class="fas fa-paper-plane"></i>
+                <span class="btn-text">Send Message</span>
+                <span class="btn-loading" style="display: none;">
+                  <i class="fas fa-spinner fa-spin"></i>
+                  Sending...
+                </span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal for images and detailed content -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal-container">
+      <button class="modal-close" id="modalClose">&times;</button>
+      <div class="modal-content" id="modalContent">
+        <!-- Dynamic content will be loaded here -->
+      </div>
     </div>
-  </section>
+  </div>
+
+  <!-- Image zoom modal -->
+  <div class="image-modal" id="imageModal">
+    <span class="image-modal-close" id="imageModalClose">&times;</span>
+    <img class="image-modal-content" id="imageModalImg">
+    <div class="image-modal-caption" id="imageModalCaption"></div>
+  </div>
 
   <footer class="footer">
-    &copy; 2025 Charlie Carpenter · Built with ❤️, AI, and a dash of coffee.
+    <div class="container">
+      <div class="footer-content">
+        <p>&copy; 2025 Charlie Carpenter. Built with <i class="fas fa-heart"></i>, AI, and lots of coffee.</p>
+        <div class="footer-links">
+          <a href="https://github.com/charliecarpenter15" target="_blank" class="footer-link">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://linkedin.com/in/carpenter-charlie" target="_blank" class="footer-link">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:me@charliecarpenter.com" class="footer-link">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+    </div>
   </footer>
 
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>

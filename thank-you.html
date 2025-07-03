@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | Charlie Carpenter</title>
+  <link rel="stylesheet" href="main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="thank-you-container">
+    <div class="thank-you-content">
+      <div class="thank-you-icon">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h1 class="thank-you-title">Thank You!</h1>
+      <p class="thank-you-message">
+        Your message has been successfully sent. I'll get back to you as soon as possible!
+      </p>
+      <div class="thank-you-details">
+        <p>I typically respond within 24-48 hours during business days.</p>
+        <p>If you need urgent assistance, feel free to reach out via:</p>
+        <div class="contact-links">
+          <a href="mailto:me@charliecarpenter.com" class="contact-link">
+            <i class="fas fa-envelope"></i>
+            me@charliecarpenter.com
+          </a>
+          <a href="https://linkedin.com/in/carpenter-charlie" target="_blank" class="contact-link">
+            <i class="fab fa-linkedin"></i>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <div class="thank-you-actions">
+        <a href="/" class="btn btn-primary">
+          <i class="fas fa-arrow-left"></i>
+          Back to Portfolio
+        </a>
+        <a href="#projects" class="btn btn-secondary" onclick="window.location.href='/#projects'">
+          <i class="fas fa-folder-open"></i>
+          View My Projects
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .thank-you-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--gradient-dark);
+      padding: 2rem;
+    }
+
+    .thank-you-content {
+      text-align: center;
+      max-width: 600px;
+      background: var(--bg-card);
+      padding: 3rem;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow-primary);
+      animation: fadeInScale 0.6s ease-out;
+    }
+
+    .thank-you-icon {
+      font-size: 4rem;
+      color: var(--accent);
+      margin-bottom: 2rem;
+      animation: bounceIn 0.8s ease-out 0.2s both;
+    }
+
+    .thank-you-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+
+    .thank-you-message {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      line-height: 1.6;
+    }
+
+    .thank-you-details {
+      background: var(--bg-secondary);
+      padding: 1.5rem;
+      border-radius: var(--border-radius);
+      margin: 2rem 0;
+      border-left: 4px solid var(--primary);
+    }
+
+    .thank-you-details p {
+      margin-bottom: 0.5rem;
+      color: var(--text-muted);
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary);
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--primary);
+      border-radius: var(--border-radius);
+      transition: var(--transition);
+    }
+
+    .contact-link:hover {
+      background: var(--primary);
+      color: var(--bg-primary);
+      transform: translateY(-2px);
+    }
+
+    .thank-you-actions {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.9) translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    @keyframes bounceIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.3);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      70% {
+        transform: scale(0.9);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .thank-you-content {
+        padding: 2rem;
+        margin: 1rem;
+      }
+
+      .thank-you-title {
+        font-size: 2rem;
+      }
+
+      .thank-you-actions {
+        flex-direction: column;
+      }
+
+      .contact-links {
+        flex-direction: column;
+      }
+    }
+  </style>
+</body>
+</html> 

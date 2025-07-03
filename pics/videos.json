@@ -1,0 +1,29 @@
+{
+    "videos": [
+        {
+            "name": "Reinforcement Learning",
+            "url": "https://vimeo.com/957321724/692ab6db19"
+        },
+        {
+            "name": "Handwrite AR",
+            "url": "https://vimeo.com/957643295/601825d096"
+        },
+        {
+            "name": "Blockchain ticketing system",
+            "url": "https://vimeo.com/957849151/9ae269562b"
+        },
+        {
+            "name": "VR AR",
+            "url": "https://vimeo.com/957644583/6442e8e36a"
+        },
+        {
+            "name": "Slaw enforcment",
+            "url": "https://vimeo.com/957745356/5504dbb427"
+        },
+        {
+            "name": "Durham Unity Game",
+            "url": "https://vimeo.com/957757644/5a89708ab7"
+        }
+        
+    ]
+}

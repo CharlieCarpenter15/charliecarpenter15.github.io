@@ -1,0 +1,145 @@
+{
+    "professional_summary": {
+      "text": "Hi there! I'm Charlie Carpenter, I have a First-Class Honours Degree in Computer Science from Durham University, where I received the Individual Project Prize for the highest-graded dissertation. I am now currently working towards an MSc in Signal Processing and Machine Learning from Singapore's Nanyang Technological University. I bring both technical expertise and a drive for impactful solutions. My projects span blockchain-based ticketing systems, augmented reality tools, and machine learning applications, each designed to address real-world challenges through innovative technology.",
+      "tags": ["MSc","Signal Processing","Machine Learning","Blockchain","AR","ML Applications"]
+    },
+    "experience": [
+      {
+        "role": "AI & Data Systems Engineer",
+        "company": "In-house AI Vending Operations",
+        "dates": "",
+        "tags": ["Electron","AWS","OpenAI API","Analytics","Scalable Systems"],
+        "summary": "Built and deployed a cross-platform Electron app with integrated OpenAI API to automate analytics and streamline vending machine operations.",
+        "description": "Proposed, built, and deployed a cross-platform Electron app used across staff machines to streamline vending machine operations. Worked closely with stakeholders from different departments to design a scalable system with secure authentication and backend services hosted on AWS. Integrated the OpenAI API to power a custom in-house AI assistant capable of generating dynamic graphs, writing tailored reports, and supporting smart product decisions. The system automated key analytics tasks, improved visibility into sales and stock data, and enabled teams to make faster, more informed decisions."
+      },
+      {
+        "role": "Cyber Security Analyst",
+        "company": "St. James’s Place",
+        "dates": "",
+        "tags": ["BitSight","Risk Management","Compliance","Cyber Essentials Plus"],
+        "summary": "Enhanced risk oversight and managed CE+ compliance for thousands of partners, improving board-level cybersecurity visibility.",
+        "description": "Enhanced third-party risk oversight by optimising BitSight’s cybersecurity risk management tool, improving board-level visibility of security ratings. Managed Cyber Essentials Plus (CE+) compliance for 4,500+ partners, coordinating risk assessments and ensuring certifications remained up to date."
+      },
+      {
+        "role": "Software Engineer Internship",
+        "company": "1 Play Sports",
+        "dates": "",
+        "tags": ["GitHub","Bug Reporting","Technical Proposals","Global Deployment"],
+        "summary": "Collaborated on enhancing user engagement for a major sporting event, reporting critical bugs and authoring a technical proposal.",
+        "description": "Collaborated on projects enhancing online user engagement for a major sporting world cup, identifying critical GitHub bugs that enabled global deployment. Authored a detailed technical product proposal, translating complex technical concepts into actionable insights for clients."
+      },
+      {
+        "role": "Event Management",
+        "company": "Durham St Mary’s College",
+        "dates": "",
+        "tags": ["Event Planning","Budget Management","Payment Systems","Revenue Growth"],
+        "summary": "Organised large-scale college events, implemented PayPal system, and significantly boosted satisfaction and revenue.",
+        "description": "Organised 25+ events for 600+ paying guests, managing a £150k+ budget and supplier coordination. Increased user satisfaction by 85% and revenue by 40%. Implemented an online PayPal card payment system, cutting admin time by 75%."
+      }
+    ],
+    "education": [
+      {
+        "degree": "MSc In Machine Learning & Signal Processing",
+        "institution": "Nanyang Technological University",
+        "dates": "Jan - Dec 2025",
+        "tags": ["Artificial Intelligence","Data mining","Genetic Algorithms","Machine Vision","Computer Vision"],
+        "summary": "Studying advanced AI and machine vision topics at a globally ranked engineering school.",
+        "description": "Studying within the  globally ranked School of Electrical and Electronic Engineering. Subjects:  Artificial Intelligence & Data mining, Genetic Algorithms & Machine learning, Machine Vision, Computer Vision. Projects: Semantic Stock Prediction and Portfolio Optimisation Software"
+      },
+      {
+        "degree": "BSc Computer Science (Hons)",
+        "institution": "Durham University",
+        "dates": "2021-2024",
+        "tags": ["First-Class Honours","Blockchain","Computer Vision","VR/AR","Machine Learning"],
+        "summary": "Achieved top-class results with a focus on practical and project-based modules.",
+        "description": "1st Class Classification (75%). Final Year (80%) - Project Management (91%), Final Academic Project on blockchain decentralised applications (87%), Computer Vision (86%), Virtual and Augmented Reality (86%), Human-AI Design (78%), Reinforcement Learning (72%), Recommend Systems (72%), Multimedia and Game Development (68%), Deep Learning (61%). Penultimate Year - Programming Paradigms, Theory of Computation, Networks and Systems, Artificial Intelligence, Data Science, Software Engineering. First Year - Open Source Project Programming, Computational Thinking, Algorithms and Data Structures, Computer Systems, Mathematics for Computer Science, Introduction to Astronomy."
+      },
+      {
+        "degree": "A Level",
+        "institution": "Gresham’s School",
+        "dates": "2019-2021",
+        "tags": ["Computer Science A*","Physics A","Mathematics A","Leadership"],
+        "summary": "Excelled academically and led major school initiatives on mental health and wellbeing.",
+        "description": "Computer Science - A*, Physics - A, Mathematics - A. As part of my schools Head team of my I led presentations on important topics such as mental health, race, and bullying to audiences of over 600 people. Through weekly meetings, I actively contributed to improving students' wellbeing. Working closely with a dedicated team of 14 individuals, we effectively raised awareness and fostered a supportive school environment. During my Computer Science coursework, I collaborated with a local pub to develop an online food and drink ordering system. Utilising Flask for the backend and Bootstrap for the frontend, this system enabled the pub to continue its operations seamlessly throughout the COVID-19 pandemic."
+      }
+    ],
+    "activities_and_societies": [
+      {"name": "Lacrosse"},
+      {"name": "Running"},
+      {"name": "Finance committee"},
+      {"name": "Scuba Diving"},
+      {"name": "Badminton"},
+      {"name": "Comp Soc"},
+      {"name": "Hackathons"},
+      {"name": "Durham University Charity Committee"}
+    ],
+    "technical_developments": [
+      {
+        "title": "Semantic Stock Prediction and Portfolio Optimisation Software",
+        "tags": ["BERT","Sentiment Analysis","Reinforcement Learning","Portfolio Optimisation"],
+        "description": "Developed a software platform integrating BERT-based sentiment analysis with machine learning models for stock prediction, comparing traditional methods with semantic-aware approaches. Designed a reinforcement learning-driven portfolio optimisation module to maximise returns while minimising risk."
+      },
+      {
+        "title": "AR Handwriting Spellchecker with AI Powered Optical Character Recognition",
+        "tags": ["AR","OCR","Accessibility","C#","OpenCV"],
+        "description": "Built an augmented reality tool for real-time spell checking and translation, achieving 98% accuracy to assist individuals with dyslexia. Winner of Durham Hackathon 2023 and 3D Technology & AI Assistant categories, competing against 500+ participants."
+      },
+      {
+        "title": "Efficient Image Classification with MobileNet (CIFAR-100)",
+        "tags": ["CNN","MobileNet","Data Augmentation","Low-Memory Environments"],
+        "description": "Engineered an ultra-efficient MobileNet-based CNN with just 102,916 parameters, optimising for low-memory environments while maintaining strong performance. Achieved an impressive 60% accuracy on CIFAR-100’s 100 classes using depth-wise separable convolutions, regularisation, and extensive data augmentation."
+      }
+    ],
+    "projects": [
+      {
+        "title": "Blockchain Based Ticketing Application",
+        "tags": ["NFT","Smart Contracts","Solidity","Ethereum","Polygon"],
+        "description": "Designed an NFT-powered ticketing platform with smart contracts to eliminate fraud and scalping while enabling dynamic pricing. Built a full-stack dApp with real-time updates using Solidity, Ethereum, Polygon, and Hardhat."
+      },
+      {
+        "title": "Deep Learning Based Adaptive Film Recommended System",
+        "tags": ["PyTorch","Recommendation Systems","Collaborative Filtering","Content-Based Filtering"],
+        "description": "Built a hybrid recommendation model combining collaborative and content-based filtering, leveraging a CNN in PyTorch for dynamic updates. Achieved strong performance with an RMSE of 0.68 and a novelty score of 3.2 on a 100K+ film dataset."
+      },
+      {
+        "title": "VR Rendering System with Custom Physics Engine",
+        "tags": ["VR","Physics Engine","LoD","IMU"],
+        "description": "Built a precise motion tracking system using IMU data, integrating a physics engine with collision detection, gravity, and air resistance. Optimized rendering with a Level of Detail (LoD) system, improving efficiency by 32% while maintaining visual fidelity."
+      },
+      {
+        "title": "Smart Meal Planner and Food Waste Management System",
+        "tags": ["Python","Flask","SQLite","Food Waste Management"],
+        "description": "As a finalist in the Durham university hackathon, I contributed significantly to the development of a this food waste management system. This innovative application allows users to input their ingredients and receive tailored recipe recommendations, prioritising items that are closest to their expiration dates to effectively minimise food waste. The system also suggests sustainable alternatives, such as donation options for unused items, thereby promoting ethical eating habits."
+      },
+      {
+        "title": "Bitcoin Autotrader",
+        "tags": ["Python","Coinbase Pro","Trading Algorithms","Tkinter"],
+        "description": "My Bitcoin auto trader is a sophisticated, Python-based application designed to optimise your cryptocurrency trading on Coinbase Pro. Utilising the Coinbase API, it employs advanced trading strategies, including dynamic moving stop losses, to minimise losses and maximise profits."
+      },
+      {
+        "title": "Unity Adventure Game based in Durham",
+        "tags": ["Unity","C#","RPG","Educational Games"],
+        "description": "D U Delivery is an immersive RPG game developed in Unity and C# with custom 2D graphics, designed to spark curiosity and problem-solving skills in children. Set in the historic city of Durham, players embark on an adventurous journey where they must solve riddles rooted in the city's rich history and mysterious rumours."
+      }
+    ],
+    "achievements": [
+      {
+        "title": "Highest Dissertation Academic Award",
+        "date": "2024-07-03",
+        "tags": ["Academic Excellence","Blockchain"],
+        "description": "Graduated from Durham University with First Class Honours. Final project titled 'Designing and Analysing the Applicability of a Blockchain-Based Event Ticketing System,' received the highest mark in cohort (87%) and awarded Individual Project Prize (BSc)."
+      },
+      {
+        "title": "Winning Durhack",
+        "date": "2023",
+        "tags": ["Hackathon","AR","Teamwork","Public Speaking"],
+        "description": "Won Overall Prize, Waterstons Prize, and Bede Gaming Prize at DurHack 2023 for developing Handwrite-AR, a spell-checking tool for handwriting."
+      }
+    ],
+    "contact": {
+      "email": "me@charliecarpenter.com",
+      "phone_uk": "+44 (0) 7780 717679",
+      "phone_sg": "+65 8332 9858"
+    }
+  }
+  
