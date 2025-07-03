@@ -225,8 +225,18 @@ class PortfolioApp {
           e.preventDefault();
           this.handleContactSubmit();
         } else {
-          // Let Netlify handle the form submission
-          this.handleNetlifySubmit(e);
+          // Let Netlify handle the form submission completely
+          // Just show loading state but don't interfere
+          const submitBtn = document.getElementById('submitBtn');
+          const btnText = submitBtn.querySelector('.btn-text');
+          const btnLoading = submitBtn.querySelector('.btn-loading');
+          
+          if (submitBtn && btnText && btnLoading) {
+            btnText.style.display = 'none';
+            btnLoading.style.display = 'inline-flex';
+            submitBtn.disabled = true;
+          }
+          // Don't prevent default - let Netlify handle everything
         }
       });
     }
