@@ -1,67 +1,98 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { usePortfolio } from '../contexts/PortfolioContext';
+import { motion } from 'framer-motion';
 
 const Experience = () => {
   const { data } = usePortfolio();
 
-  const TimelineItem = ({ item, type }) => (
-    <div className="timeline-item">
-      <div className="timeline-dot"></div>
-      <div className="timeline-content">
-        <div className="timeline-header">
-          <div className="timeline-info">
-            <h3>{type === 'experience' ? item.role : item.degree}</h3>
-            <h4>{type === 'experience' ? item.company : item.institution}</h4>
+  // Combine and sort experience and education items
+  const timelineItems = useMemo(() => {
+    const allItems = [
+      ...data.experience.map(item => ({
+        ...item,
+        type: 'experience',
+        sortDate: new Date(item.dates.split('-')[0] || '2024'),
+        icon: 'fas fa-briefcase'
+      })),
+      ...data.education.map(item => ({
+        ...item,
+        type: 'education',
+        role: item.degree,
+        company: item.institution,
+        sortDate: new Date(item.dates.split('-')[0] || '2024'),
+        icon: 'fas fa-graduation-cap'
+      }))
+    ];
+    
+    return allItems.sort((a, b) => b.sortDate - a.sortDate);
+  }, [data]);
+
+  const TimelineItem = ({ item, index }) => {
+    const isLeft = index % 2 === 0;
+    
+    return (
+      <motion.div 
+        className={`timeline-item ${isLeft ? 'left' : 'right'}`}
+        initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+      >
+        <div className="timeline-dot">
+          <i className={item.icon}></i>
+        </div>
+        <motion.div 
+          className="timeline-content"
+          whileHover={{ scale: 1.02 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          <div className="timeline-header">
+            <div className="timeline-info">
+              <h3>{item.role}</h3>
+              <h4>{item.company}</h4>
+              <div className="timeline-date">{item.dates}</div>
+            </div>
+            <div className="timeline-type">
+              <span className={`type-badge ${item.type}`}>
+                {item.type.charAt(0).toUpperCase() + item.type.slice(1)}
+              </span>
+            </div>
           </div>
-          <div className="timeline-date">{item.dates}</div>
-        </div>
-        <p className="timeline-description">{item.summary}</p>
-        <div className="timeline-tags">
-          {item.tags.map((tag, index) => (
-            <span key={index} className="timeline-tag">{tag}</span>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
+          <p className="timeline-description">{item.description}</p>
+          <div className="timeline-tags">
+            {item.tags.map((tag, index) => (
+              <motion.span 
+                key={index} 
+                className="timeline-tag"
+                whileHover={{ scale: 1.1 }}
+              >
+                {tag}
+              </motion.span>
+            ))}
+          </div>
+        </motion.div>
+      </motion.div>
+    );
+  };
 
   return (
-    <section className="experience-education" id="experience">
+    <section className="experience-section" id="experience">
       <div className="container">
-        <div className="section-header">
+        <motion.div 
+          className="section-header"
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
           <h2 className="section-title">Professional Journey</h2>
           <div className="section-line"></div>
-        </div>
-        <div className="journey-container">
-          <div className="journey-side">
-            <div className="journey-header">
-              <h3 className="journey-title">
-                <i className="fas fa-briefcase"></i>
-                Experience
-              </h3>
-            </div>
-            <div className="timeline-container" id="experienceTimeline">
-              <div className="timeline-line"></div>
-              {data.experience.map((item, index) => (
-                <TimelineItem key={index} item={item} type="experience" />
-              ))}
-            </div>
-          </div>
-          <div className="journey-divider"></div>
-          <div className="journey-side">
-            <div className="journey-header">
-              <h3 className="journey-title">
-                <i className="fas fa-graduation-cap"></i>
-                Education
-              </h3>
-            </div>
-            <div className="timeline-container" id="educationTimeline">
-              <div className="timeline-line"></div>
-              {data.education.map((item, index) => (
-                <TimelineItem key={index} item={item} type="education" />
-              ))}
-            </div>
-          </div>
+        </motion.div>
+        
+        <div className="timeline-container">
+          <div className="timeline-line"></div>
+          {timelineItems.map((item, index) => (
+            <TimelineItem key={index} item={item} index={index} />
+          ))}
         </div>
       </div>
     </section>

@@ -1504,3 +1504,246 @@ img:hover {
     height: 40px;
   }
 }
+
+/* Timeline Styles */
+.experience-section {
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.timeline-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.timeline-line {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: var(--primary-color);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  width: 50%;
+  padding: 20px 40px;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.timeline-item.left {
+  left: 0;
+}
+
+.timeline-item.right {
+  left: 50%;
+}
+
+.timeline-dot {
+  width: 30px;
+  height: 30px;
+  background: var(--primary-color);
+  border-radius: 50%;
+  position: absolute;
+  right: -15px;
+  top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  z-index: 2;
+}
+
+.timeline-item.right .timeline-dot {
+  left: -15px;
+}
+
+.timeline-content {
+  background: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.timeline-info h3 {
+  margin: 0;
+  color: var(--primary-color);
+  font-size: 1.2em;
+}
+
+.timeline-info h4 {
+  margin: 5px 0;
+  color: var(--text-secondary);
+  font-size: 1em;
+}
+
+.timeline-date {
+  color: var(--text-muted);
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+.timeline-type .type-badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8em;
+  font-weight: 500;
+}
+
+.type-badge.experience {
+  background: var(--primary-color);
+  color: white;
+}
+
+.type-badge.education {
+  background: var(--secondary-color);
+  color: white;
+}
+
+.timeline-description {
+  margin: 15px 0;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.timeline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.timeline-tag {
+  background: var(--tag-bg);
+  color: var(--tag-text);
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.85em;
+  cursor: pointer;
+}
+
+/* Image Modal Styles */
+.image-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.image-modal-content-wrapper {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  background: var(--card-bg);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.image-modal-image {
+  display: block;
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+}
+
+.image-modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+  z-index: 2;
+}
+
+.image-modal-close:hover {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.image-modal-caption {
+  padding: 15px;
+  background: var(--card-bg);
+  color: var(--text-primary);
+  text-align: center;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/* Responsive Timeline */
+@media (max-width: 768px) {
+  .timeline-container {
+    padding: 20px 10px;
+  }
+  
+  .timeline-line {
+    left: 30px;
+  }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 10px;
+    left: 0 !important;
+  }
+  
+  .timeline-dot {
+    left: 15px !important;
+    right: auto !important;
+  }
+  
+  .timeline-content {
+    padding: 15px;
+  }
+  
+  .timeline-header {
+    flex-direction: column;
+  }
+  
+  .timeline-type {
+    margin-top: 10px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --card-bg: #2a2a2a;
+    --text-primary: #ffffff;
+    --text-secondary: #cccccc;
+    --text-muted: #999999;
+    --tag-bg: #3a3a3a;
+    --tag-text: #ffffff;
+  }
+  
+  .timeline-content {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+}
